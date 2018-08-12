@@ -1754,6 +1754,116 @@ declare module "rxjs" {
       options: rxjs$EventListenerOptions,
       selector: () => T
     ) => rxjs$Observable<T>);
+
+    combineLatest<+T, A, B, C, D, E, F, G, H>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      d: rxjs$Observable<D>,
+      e: rxjs$Observable<E>,
+      f: rxjs$Observable<F>,
+      g: rxjs$Observable<G>,
+      resultSelector: (t: T, a: A, b: B, c: C, d: D, e: E, f: F, g: G) => H
+    ): rxjs$Observable<T> => rxjs$Observable<H>;
+
+    combineLatest<+T, A, B, C, D, E, F, G>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      d: rxjs$Observable<D>,
+      e: rxjs$Observable<E>,
+      f: rxjs$Observable<F>,
+      resultSelector: (t: T, a: A, b: B, c: C, d: D, e: E, f: F) => G
+    ): rxjs$Observable<T> => rxjs$Observable<G>;
+
+    combineLatest<+T, A, B, C, D, E, F>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      d: rxjs$Observable<D>,
+      e: rxjs$Observable<E>,
+      resultSelector: (t: T, a: A, b: B, c: C, d: D, e: E) => F
+    ): rxjs$Observable<T> => rxjs$Observable<F>;
+
+    combineLatest<+T, A, B, C, D, E>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      d: rxjs$Observable<D>,
+      resultSelector: (t: T, a: A, b: B, c: C, d: D) => E
+    ): rxjs$Observable<T> => rxjs$Observable<E>;
+
+    combineLatest<+T, A, B, C, D>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      resultSelector: (t: T, a: A, b: B, c: C) => D
+    ): rxjs$Observable<T> => rxjs$Observable<D>;
+
+    combineLatest<+T, A, B, C>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      resultSelector: (t: T, a: A, b: B) => C
+    ): rxjs$Observable<T> => rxjs$Observable<C>;
+
+    combineLatest<+T, A, B>(
+      a: rxjs$Observable<A>,
+      resultSelector: (t: T, a: A) => B
+    ): rxjs$Observable<T> => rxjs$Observable<B>;
+
+    combineLatest<+T, A, B, C, D, E, F, G>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      d: rxjs$Observable<D>,
+      e: rxjs$Observable<E>,
+      f: rxjs$Observable<F>,
+      g: rxjs$Observable<G>,
+      _: void
+    ): rxjs$Observable<T> => rxjs$Observable<[T, A, B, C, D, E, E, F, G]>;
+
+    combineLatest<+T, A, B, C, D, E, F>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      d: rxjs$Observable<D>,
+      e: rxjs$Observable<E>,
+      f: rxjs$Observable<F>,
+      _: void
+    ): rxjs$Observable<T> => rxjs$Observable<[T, A, B, C, D, E, F]>;
+
+    combineLatest<+T, A, B, C, D, E>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      d: rxjs$Observable<D>,
+      e: rxjs$Observable<E>,
+      _: void
+    ): rxjs$Observable<T> => rxjs$Observable<[T, A, B, C, D, E]>;
+
+    combineLatest<+T, A, B, C, D>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      d: rxjs$Observable<D>,
+      _: void
+    ): rxjs$Observable<T> => rxjs$Observable<[T, A, B, C, D]>;
+
+    combineLatest<+T, A, B, C>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      c: rxjs$Observable<C>,
+      _: void
+    ): rxjs$Observable<T> => rxjs$Observable<[T, A, B, C]>;
+
+    combineLatest<+T, A, B>(
+      a: rxjs$Observable<A>,
+      b: rxjs$Observable<B>,
+      _: void
+    ): rxjs$Observable<T> => rxjs$Observable<[T, A, B]>;
+
+    combineLatest<+T, A>(a: rxjs$Observable<A>, _: void): rxjs$Observable<T> => rxjs$Observable<[T, A]>;
+
     Observable: typeof rxjs$Observable,
     Observer: typeof rxjs$Observer,
     ConnectableObservable: typeof rxjs$ConnectableObservable,
