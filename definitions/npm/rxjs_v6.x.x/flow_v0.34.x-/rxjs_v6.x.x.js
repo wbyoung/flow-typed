@@ -2003,6 +2003,8 @@ declare module "rxjs" {
       resultSelector: (...values: Array<any>) => A
     ): rxjs$Observable<A>;
 
+    race<+T>(other: rxjs$Observable<T>): rxjs$Observable<T> => rxjs$Observable<T>;
+
     zip<A, B>(
       a: rxjs$Observable<A>,
       resultSelector: (a: A) => B
